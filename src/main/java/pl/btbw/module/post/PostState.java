@@ -1,4 +1,4 @@
-package pl.btbw.module;
+package pl.btbw.module.post;
 
 public enum PostState {
 

@@ -1,4 +1,4 @@
-package pl.btbw.module;
+package pl.btbw.module.post;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;

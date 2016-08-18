@@ -1,4 +1,4 @@
-package pl.btbw.module;
+package pl.btbw.module.post;
 
 import org.statefulj.persistence.annotations.State;
 
@@ -13,5 +13,12 @@ public class Post {
 
 	public String getState() {
 		return state;
+	}
+
+	@Override
+	public String toString() {
+		return "Post{" +
+				"state='" + state + '\'' +
+				'}';
 	}
 }

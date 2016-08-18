@@ -1,4 +1,4 @@
-package pl.btbw.module;
+package pl.btbw.module.post.fsm;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,6 +6,10 @@ import org.statefulj.fsm.FSM;
 import org.statefulj.fsm.model.State;
 import org.statefulj.fsm.model.impl.StateImpl;
 import org.statefulj.persistence.memory.MemoryPersisterImpl;
+import pl.btbw.module.post.Post;
+import pl.btbw.module.post.PostMockStorage;
+import pl.btbw.module.post.PostState;
+import pl.btbw.module.post.fsm.action.TestAction;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
@@ -39,7 +43,7 @@ public class PostFiniteStateMachine {
 	public void init() {
 
 
-		DRAFT.addTransition("EventPublish", PUBLISHED);
+		DRAFT.addTransition("EventPublish", PUBLISHED, new TestAction());
 
 		PUBLISHED.addTransition("EventUnPublish", UNPUBLISHED);
 
